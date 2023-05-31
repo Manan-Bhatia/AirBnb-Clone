@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    height: 70px;
+    display: flex;
+    padding:22px 30px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.Header-Image{
+    max-height: 75%;
+    align-self: center;
+}
+
+.Hero
+{
+    display: flex;
+    flex-direction: column;
+    padding:30px 40px;
+}
+
+.Hero-Image{
+    margin-right:auto;
+    margin-left: auto;
+    margin-bottom:30px;
+    max-width: 50%;
+}
