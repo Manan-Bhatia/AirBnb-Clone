@@ -2,18 +2,33 @@ import React from "react";
 import dummyImage from "../assets/dummy-image.png";
 import starImage from "../assets/star.png";
 
-export default function Card({props}) {
+export default function Card({ dataRecieved }) {
     return (
         <div className="card">
-            <img src={props.url} alt="Image" className="card-image" />
+            <img src={dataRecieved.url} alt="Image" className="card-image" />
             <div className="card-stats">
                 <img src={starImage} alt="Star" className="card-star" />
-                <span>5.0</span>
-                <span className = "grey">(6) • </span>
-                <span className = "grey">USA</span>
+                <span>{dataRecieved.rating}</span>
+                <span className="grey">({dataRecieved.noOfRatings})</span>
             </div>
-            <p>Seller : {props.firstName}</p>
-            <p><b>From $130</b> / Person</p>
+            <span>
+                <b>
+                    {dataRecieved.location_city},{" "}
+                    {dataRecieved.location_country}
+                </b>
+            </span>
+            <br />
+            <span>{dataRecieved.distance} Kilometers away</span>
+            <p title="Unsplash User">
+                Seller : <a href={dataRecieved.profileLink} target="_blank">{dataRecieved.firstName}</a>
+            </p>
+            <p>
+                <b>
+                    <span className="sans-serif">₹</span>
+                    {dataRecieved.price}
+                </b>{" "}
+                night
+            </p>
         </div>
     );
 }
